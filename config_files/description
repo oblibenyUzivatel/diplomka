@@ -1,0 +1,32 @@
+per-packet.ini:
+ - Changes IP, port and SSRC using per-packet approach.
+ 
+per-packet_ip_porty.ini:
+ - Changes second two bytes of IP addresses with 50 % probability. Sets source port number to 60 000 and generates destination port number from <1030,1050> interval. Changes SSRC and payload type of RTP.
+ 
+per-packet_rtp_all.ini:
+ - Changes all header fields of RTP protocol. Also changes IP and ports in other supported protocols. Breaks packets.
+ 
+per-packet_delete.ini:
+ - Deletes 33 % of all packets of supported protocols.
+ 
+per-packet_duplicate.ini:
+ - Duplicates all supported packets with 50 % probability and maximumum of 4 times. Duplication version is 2, duplicated packets will not be randomized.
+ 
+per-stream_v1.ini:
+ - Changes IP, port and SSRC using per-stream version 1 approach.
+ 
+per-stream_v3.ini:
+ - Changes IP, port and SSRC using per-stream version 3 approach.
+ 
+per-stream_v2_delete.ini:
+ - Deletes streams with 50 % probability.
+ 
+per-stream_v2_duplicate1.ini:
+ - Duplicates known streams with 100 % probability using version 1 duplication -> stream will be randomized after duplication.
+ 
+per-stream_v2_duplicate2.ini:
+ - Duplicates known streams with 100 % probability using version 2 duplication -> stream will be randomized before duplication.
+ 
+per-stream_v2_duplicate1_time.ini:
+ - Duplicates known streams with 100 % probability using version 1 duplication -> stream will be randomized after duplication. On top of that randomizes capture time of streams.
